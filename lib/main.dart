@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 18),
             Text(
-              'MAHFUZ AFTAB & RABIH NADER, worked as a team to complete the of Mobile Web Application-MDEV1005 W23 Assignment 04',
+              'MAHFUZ AFTAB & RABIH NADER, worked as a team to complete the Mobile Web Application-MDEV1005 W23 Assignment 04',
               style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 14,
