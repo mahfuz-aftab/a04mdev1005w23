@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
+// Declaring StatefulWidget class called NotesPage
 class NotesPage extends StatefulWidget {
   const NotesPage({Key? key}) : super(key: key);
 
+  // Overriding createState method to return an instance of _NotesPageState
   @override
   _NotesPageState createState() => _NotesPageState();
 }
 
+// Declaring State class called _NotesPageState
 class _NotesPageState extends State<NotesPage> {
   List<String> _notes = [];
 
   TextEditingController _noteController = TextEditingController();
 
+  // Defining a function named _addNote to add a note to _notes List
   void _addNote() {
     if (_noteController.text.isNotEmpty) {
       setState(() {
@@ -21,12 +25,14 @@ class _NotesPageState extends State<NotesPage> {
     }
   }
 
+  // Defining a function named _deleteNoteAt to delete a note from _notes List
   void _deleteNoteAt(int index) {
     setState(() {
       _notes.removeAt(index);
     });
   }
 
+  // Defining function named _editNoteAt to edit a note in _notes List
   void _editNoteAt(int index) {
     _noteController.text = _notes[index];
     showDialog(

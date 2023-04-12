@@ -7,6 +7,14 @@ class NewsFeedPage extends StatefulWidget {
   _NewsFeedPageState createState() => _NewsFeedPageState();
 }
 
+//The _NewsFeedPageState class is the state class for NewsFeedPage
+
+//The _NewsFeedPageState class has a apiUrl variable which holds the API URL for fetching news articles.
+
+//The _NewsFeedPageState class has a newsList variable which holds a list of news 
+
+//The _NewsFeedPageState class has an isLoading variable which is used to track whether news articles are currently being loaded from the API
+
 class _NewsFeedPageState extends State<NewsFeedPage> {
   final String apiUrl =
       'https://newsapi.org/v2/top-headlines?country=us&apiKey=3b6fe86728144dc8a4c1d96c09f5e946';
@@ -47,6 +55,7 @@ class _NewsFeedPageState extends State<NewsFeedPage> {
     fetchNews();
   }
 
+  //Each ListTile displays the title and description of a news article, and an onTap callback can be implemented to handle tapping on a news article item
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +74,7 @@ class _NewsFeedPageState extends State<NewsFeedPage> {
                       title: Text(news['title'] ?? ''),
                       subtitle: Text(news['description'] ?? ''),
                       onTap: () {
+                        // Do something when a news item is tapped
                       },
                     );
                   },

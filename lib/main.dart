@@ -1,26 +1,34 @@
 import 'package:flutter/material.dart';
 
+// import two custom tools into the application
 import 'newsfeed.dart';
 import 'notes.dart';
 
+// The main() function the entry point of the app
 void main() {
   runApp(const MyApp());
 }
 
+// MyApp widget that represents application
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // build() method returns a MaterialApp widget which contains the application routes, theme
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // App Title
       title: 'A04MDEV1005W23',
 
+      // App Theme
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
 
+      // initial route of app (home)
       initialRoute: '/',
 
+      // routes of app Home Page, Newsfeed Page, Notes Page
       routes: {
         '/': (context) => const MyHomePage(title: 'Mobile Web Applications - MDEV1005 W23'),
         '/newsfeed': (context) => NewsFeedPage(),
@@ -30,20 +38,26 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Define StatefulWidget class called MyHomePage
 class MyHomePage extends StatefulWidget {
 
+  // Constructor requires title and key
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
+  // Override createState method to return new _MyHomePageState
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// Define State class called _MyHomePageState
 class _MyHomePageState extends State<MyHomePage> {
 
+  // Override the build method to create the UI for the widget
   @override
   Widget build(BuildContext context) {
+    // Return a Scaffold with an AppBar and a body containing a Column
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
